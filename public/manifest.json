@@ -1,0 +1,61 @@
+{
+  "short_name": "PWA Boilerplate",
+  "name": "PWA Boilerplate",
+  "description": "A minimal boilerplate for PWA apps",
+  "icons": [
+    {
+      "src": "./images/icons/app-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "./images/icons/app-icon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "./images/icons/app-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "./images/icons/app-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "./images/icons/app-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "./images/icons/app-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "./images/icons/app-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./images/icons/app-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "scope": ".",
+  "theme_color": "#47107a",
+  "background_color": "#47107a",
+  "dir": "ltr",
+  "lang": "en-US",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.google.samples.apps.iosched"
+    }
+  ]
+}
