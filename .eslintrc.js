@@ -179,7 +179,8 @@ module.exports = {
         "multiline": true,
         "minItems": 3
       }
-    ]
+    ],
+    "jsx-a11y/label-has-associated-control":  "off",
   },
   env: {
     "node": true,
