@@ -1,5 +1,27 @@
+if (typeof idb === 'undefined') {
+
+  self.importScripts('storageJs/idb.js');
+
+}
+
+if (typeof indexDb === 'undefined') {
+
+  self.importScripts('storageJs/utility.js');
+
+}
+
+
 const CACHE_STATIC_NAME = 'static-v1';
 const CACHE_DYNAMIC_NAME = 'dynamic-v1';
+const STATIC_FILES = [
+  '/',
+  '/index.html',
+  '/storageJs/idb.js',
+  '/offline.html',
+  '/favicon.ico',
+  '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css',
+];
+
 
 self.addEventListener('install', async () => {
 
@@ -7,13 +29,7 @@ self.addEventListener('install', async () => {
 
   const staticCache = await caches.open(CACHE_STATIC_NAME);
 
-  await staticCache.addAll([
-    '/',
-    '/index.html',
-    '/offline.html',
-    '/images/icons/favicon.ico',
-    '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css',
-  ]);
+  await staticCache.addAll(STATIC_FILES);
 
 });
 
@@ -42,7 +58,7 @@ self.addEventListener('activate', async function(){ // eslint-disable-line
 });
 
 
-const cachedRessources = async (request) => {
+const cachedWithFetchFallback = async (request) => {
 
   if (!request.url.includes('sock')) {
 
@@ -60,17 +76,19 @@ const cachedRessources = async (request) => {
 
       const dynamicCache = await caches.open(CACHE_DYNAMIC_NAME);
 
-      dynamicCache.put(request.url, fetchResponse.clone());
-
+      dynamicCache.put(request, fetchResponse.clone());
 
       return fetchResponse;
 
     } catch (error) {
 
       console.log(error);
-      const staticCache = await caches.open(CACHE_STATIC_NAME);
 
-      return staticCache.match('/offline.html');
+      if (request.headers.get('accept').includes('text/html')) {
+
+        return caches.match('/offline.html');
+
+      }
 
     }
 
@@ -80,8 +98,48 @@ const cachedRessources = async (request) => {
 
 };
 
+const fetchAndStoreDb = async (request) => {
+
+  try {
+
+    const fetchResponse = await fetch(request);
+
+    const data = await fetchResponse.clone().json();
+
+    const movieSearch = new URL(request.url).searchParams.get('s');
+
+    await writeDb('movies', movieSearch, data.Search);
+
+    return fetchResponse;
+
+  } catch (error) {
+
+    console.log(error);
+
+    return error;
+
+  }
+
+
+};
+
 self.addEventListener('fetch', async (event) => {
 
-  event.respondWith(cachedRessources(event.request));
+  const { request } = event;
+
+  if (request.url.indexOf('omdbapi') > -1) {
+
+    event.respondWith(fetchAndStoreDb(request));
+
+  } else if (STATIC_FILES.join('.').indexOf(new URL(request.url).pathname) > -1) {
+
+    // This is cache only strategy for static files cached on sw installation
+    event.respondWith(caches.match(request));
+
+  } else {
+
+    event.respondWith(cachedWithFetchFallback(request));
+
+  }
 
 });

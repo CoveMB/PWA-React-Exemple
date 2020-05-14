@@ -75,7 +75,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
-      favicon : 'public/images/icons/favicon.ico'
+      favicon : 'public/favicon.ico'
     }),
     new CopyWebpackPlugin([ { from: 'public' } ]),
     new webpack.DefinePlugin({ 'process.env': JSON.stringify(dotenv.config().parsed) })

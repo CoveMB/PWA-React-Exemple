@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MovieList from '../movie/MovieList';
 import Layout from '../Layout/Layout';
 import Input from '../shared/Input';
+import { readDb } from '../../indexDb';
 
 const Home = () => {
 
@@ -11,18 +12,39 @@ const Home = () => {
 
   const fetchMovies = async () => {
 
-    const requestUrl = `https://www.omdbapi.com/?s=${searchedMovie}&apikey=${process.env.REACT_APP_API_KEY}`;
+    if (searchedMovie.length > 1) {
 
-    const responseMovies = await fetch(requestUrl);
+      const requestUrl = `https://www.omdbapi.com/?s=${searchedMovie}&apikey=${process.env.REACT_APP_API_KEY}`;
+      const fetchCompleted = false;
 
-    const userCache = await caches.open('user-cache');
+      try {
 
-    userCache.put(requestUrl, responseMovies.clone());
+        try {
 
-    const newMovies = await responseMovies.json();
+          const responseMovies = await fetch(requestUrl);
 
+          const newMovies = await responseMovies.json();
 
-    setMovies(newMovies.Search || []);
+          setMovies(newMovies.Search || []);
+
+        } catch {
+
+          const historySearch = await readDb('movies');
+
+          const foundHistoric = historySearch.find((historic) => historic.movieSearch === searchedMovie);
+
+          setMovies(foundHistoric.results || []);
+
+        }
+
+      } catch (error) {
+
+        console.log(error);
+
+      }
+
+    }
+
 
   };
 
