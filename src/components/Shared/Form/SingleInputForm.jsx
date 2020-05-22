@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import { Form, Button } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
+import { Div, Button } from './SingleInputFormStyle';
 
-const SingleInputForm = (props) => {
+const SingleInputForm = ({ element, setElement, label }) => {
 
-  const { element, setElement, label } = props;
   const inputRef = useRef();
 
   const handleSubmit = (event) => {
@@ -19,16 +19,18 @@ const SingleInputForm = (props) => {
       <br />
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-          <label>
-            {label}
+          <label>{label}</label>
+          <Div>
             <input
               placeholder={element}
               ref={inputRef}
             />
-          </label>
+
+            <Button type="submit" />
+          </Div>
         </Form.Field>
 
-        <Button type="submit"> Submit </Button>
+
       </Form>
 
     </>

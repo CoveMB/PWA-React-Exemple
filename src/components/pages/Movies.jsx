@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MovieList from '../Movie/MovieList';
 import Layout from '../Layout/Layout';
-import SingleInputForm from '../Shared/SingleInputForm';
+import SingleInputForm from '../Shared/Form/SingleInputForm';
 import { readDb } from '../../indexDb';
 
 const Home = () => {
@@ -66,7 +66,6 @@ const Home = () => {
       <br />
       <MovieList movies={movies} />
       <br />
-      <Link to="/chat">Navigate to Dynamic Chat</Link>
 
     </Layout>
 

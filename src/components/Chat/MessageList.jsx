@@ -1,8 +1,6 @@
 import React from 'react';
 
-const MessageList = (props) => {
-
-  const { messages } = props;
+const MessageList = ({ messages }) => {
 
   const getMinutes = (time) => {
 

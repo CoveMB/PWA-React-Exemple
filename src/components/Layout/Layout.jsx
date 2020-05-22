@@ -1,22 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Container, Divider, Icon } from 'semantic-ui-react';
+import { Container, Divider, Icon } from 'semantic-ui-react';
+import { Div, Header, NavLink } from './LayoutStyle';
+
 
 const Layout = ({ children }) => (
-  <Container>
-    <Link to="/">
-      <Header as="h1">
-        This is the navbar
+  <>
+    <Div>
+      <Link to="/chat">
+        <NavLink>
+          Chat
+        </NavLink>
+      </Link>
+      <Header>
+        The PWA Boilerplate
       </Header>
-    </Link>
-    {children}
-    <Divider />
-    <p>
-      Made with
-      {' '}
-      <Icon name="heart" color="red" />
-    </p>
-  </Container>
+      <Link to="/">
+        <NavLink>
+          Movies
+        </NavLink>
+      </Link>
+    </Div>
+    <Container>
+      {children}
+    </Container>
+  </>
 );
 
 export default Layout;

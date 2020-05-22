@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 
-const SingleInput = (props) => {
+const SingleInput = ({ element, setElement, label }) => {
 
-  const { element, setElement, label } = props;
   const inputRef = useRef();
 
   const handleChange = (event) => {

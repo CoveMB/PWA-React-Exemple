@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from 'semantic-ui-react';
-import SingleInputForm from '../Shared/SingleInputForm';
-import SingleInput from '../Shared/SingleInput';
+import SingleInputForm from '../Shared/Form/SingleInputForm';
+import SingleInput from '../Shared/Form/SingleInput';
 import { writeDb, readDb } from '../../indexDb';
 import MessageList from '../Chat/MessageList';
 import Layout from '../Layout/Layout';
@@ -112,11 +112,11 @@ const Chat = () => {
   return (
     <Layout>
       <Header as="h2">Dynamic Chat</Header>
-      <br />
+      <p>This page was loaded asynchronously!</p>
       <SingleInput
         element={author}
         setElement={setAuthor}
-        label="Set your name:"
+        label="Set your name (not fucker le chien):"
       />
       <br />
       <SingleInputForm
@@ -127,7 +127,6 @@ const Chat = () => {
       <br />
       <MessageList messages={chat} />
       <br />
-      <p>This page was loaded asynchronously!</p>
     </Layout>
   );
 

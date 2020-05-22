@@ -1,23 +1,16 @@
 import React from 'react';
 
-const MovieList = (props) => {
+const MovieList = ({ movies }) => (
+  <>
 
-  const { movies } = props;
+    <br />
 
+    {movies.map((movie) => <p key={movie.imdbID}>{movie.Title}</p>)}
 
-  return (
-    <>
+    <br />
 
-      <br />
+  </>
 
-      {movies.map((movie) => <p key={movie.imdbID}>{movie.Title}</p>)}
-
-      <br />
-
-    </>
-
-  );
-
-};
+);
 
 export default MovieList;
