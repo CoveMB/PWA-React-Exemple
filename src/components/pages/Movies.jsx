@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import MovieList from '../movie/MovieList';
+import MovieList from '../Movie/MovieList';
 import Layout from '../Layout/Layout';
-import Input from '../shared/Input';
+import SingleInputForm from '../Shared/SingleInputForm';
 import { readDb } from '../../indexDb';
 
 const Home = () => {
@@ -27,13 +27,13 @@ const Home = () => {
 
           setMovies(newMovies.Search || []);
 
-        } catch {
+        } catch (error) {
 
-          const historySearch = await readDb('movies');
+          const historySearch = await readDb('omdbapi');
 
-          const foundHistoric = historySearch.find((historic) => historic.movieSearch === searchedMovie);
+          const foundHistoric = historySearch.find((historic) => historic.id === searchedMovie);
 
-          setMovies(foundHistoric.results || []);
+          setMovies(foundHistoric.result || []);
 
         }
 
@@ -58,15 +58,15 @@ const Home = () => {
   return (
     <Layout>
 
-      <Input
-        searchedMovie={searchedMovie}
-        setSearchedMovie={setSearchedMovie}
+      <SingleInputForm
+        element={searchedMovie}
+        setElement={setSearchedMovie}
         label="Enter a movie:"
       />
       <br />
       <MovieList movies={movies} />
       <br />
-      <Link to="/dynamic">Navigate to Dynamic Page</Link>
+      <Link to="/chat">Navigate to Dynamic Chat</Link>
 
     </Layout>
 

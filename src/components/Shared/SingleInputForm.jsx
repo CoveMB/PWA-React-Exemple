@@ -1,15 +1,15 @@
 import React, { useRef } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 
-const Input = (props) => {
+const SingleInputForm = (props) => {
 
-  const { searchedMovie, setSearchedMovie, label } = props;
+  const { element, setElement, label } = props;
   const inputRef = useRef();
 
   const handleSubmit = (event) => {
 
     event.preventDefault();
-    setSearchedMovie(inputRef.current.value);
+    setElement(inputRef.current.value);
 
   };
 
@@ -22,7 +22,7 @@ const Input = (props) => {
           <label>
             {label}
             <input
-              placeholder={searchedMovie}
+              placeholder={element}
               ref={inputRef}
             />
           </label>
@@ -37,4 +37,4 @@ const Input = (props) => {
 
 };
 
-export default Input;
+export default SingleInputForm;

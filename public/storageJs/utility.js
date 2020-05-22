@@ -1,15 +1,27 @@
 // idb will promisify the indexDb
 const indexDb = idb.open('app-store', 1, (db) => {
 
-  if (!db.objectStoreNames.contains('movies')) {
+  if (!db.objectStoreNames.contains('omdbapi')) {
 
-    db.createObjectStore('movies', { keyPath: 'movieSearch' });
+    db.createObjectStore('omdbapi', { keyPath: 'id' });
+
+  }
+
+  if (!db.objectStoreNames.contains('messages')) {
+
+    db.createObjectStore('messages', { keyPath: 'id' });
+
+  }
+
+  if (!db.objectStoreNames.contains('sync-chat')) {
+
+    db.createObjectStore('sync-chat', { keyPath: 'id' });
 
   }
 
 });
 
-const writeDb = async (storeName, key, data) => {
+const writeDb = async (storeName, data) => {
 
   const db = await indexDb;
 
@@ -17,9 +29,7 @@ const writeDb = async (storeName, key, data) => {
 
   const store = transaction.objectStore(storeName);
 
-  store.put({
-    movieSearch: key, results: data
-  });
+  store.put(data);
 
   return transaction.complete;
 

@@ -10,7 +10,7 @@ const MovieList = (props) => {
 
       <br />
 
-      {movies.map((movie, index) => <p key={movie.imdbID}>{movie.Title}</p>)}
+      {movies.map((movie) => <p key={movie.imdbID}>{movie.Title}</p>)}
 
       <br />
 
