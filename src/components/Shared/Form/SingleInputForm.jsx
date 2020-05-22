@@ -2,7 +2,9 @@ import React, { useRef } from 'react';
 import { Form } from 'semantic-ui-react';
 import { Div, Button } from './SingleInputFormStyle';
 
-const SingleInputForm = ({ element, setElement, label }) => {
+const SingleInputForm = ({
+  element, setElement, label, name
+}) => {
 
   const inputRef = useRef();
 
@@ -19,9 +21,10 @@ const SingleInputForm = ({ element, setElement, label }) => {
       <br />
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-          <label>{label}</label>
+          <label htmlFor={name}>{label}</label>
           <Div>
             <input
+              name={name}
               placeholder={element}
               ref={inputRef}
             />

@@ -59,6 +59,7 @@ const Home = () => {
     <Layout>
 
       <SingleInputForm
+        name="movie"
         element={searchedMovie}
         setElement={setSearchedMovie}
         label="Enter a movie:"

@@ -114,6 +114,7 @@ const Chat = () => {
       <Header as="h2">Dynamic Chat</Header>
       <p>This page was loaded asynchronously!</p>
       <SingleInput
+        name="message"
         element={author}
         setElement={setAuthor}
         label="Set your name (not fucker le chien):"
