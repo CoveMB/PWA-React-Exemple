@@ -5,9 +5,10 @@ export const Div = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 20px 20px 5px 20px;
+  padding: 15px 20px 5px 20px;
   background-color: #47107a;
   margin-bottom: 0;
+  border: 1px solid #47107a;
 `;
 
 export const Header = styled.h1`
