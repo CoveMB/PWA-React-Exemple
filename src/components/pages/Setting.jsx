@@ -64,8 +64,24 @@ const Setting = () => {
 
         const notification = 'Notification enabled';
         const notificationOptions = {
-          body: 'You can turn them off in your settings',
-          icon: 'public/images/icons/app-icon72x72.png'
+          body    : 'You can turn them off in your settings',
+          badge   : '/images/icons/app-icon-72x72.png',
+          icon    : '/images/icons/app-icon-72x72.png',
+          renotify: true,
+          tag     : 'confirm-notification',
+          vibrate : [
+            100,
+            50,
+            20
+          ],
+          actions: [
+            {
+              action: 'confirm', title: 'Noted!'
+            },
+            {
+              action: 'confused', title: 'What?'
+            }
+          ]
         };
 
 
