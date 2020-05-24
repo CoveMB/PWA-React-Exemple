@@ -1,6 +1,18 @@
 import React, { useRef } from 'react';
+import styled from 'styled-components';
 import { Form } from 'semantic-ui-react';
-import { Div, Button } from './SingleInputFormStyle';
+import { button } from '../Style/button';
+
+export const Div = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: stretch
+`;
+
+export const SubmitButton = styled.input`
+  ${button}
+  margin-left: 10px;
+`;
 
 const SingleInputForm = ({
   element, setElement, label, name
@@ -29,7 +41,7 @@ const SingleInputForm = ({
               ref={inputRef}
             />
 
-            <Button type="submit" />
+            <SubmitButton type="submit" />
           </Div>
         </Form.Field>
 

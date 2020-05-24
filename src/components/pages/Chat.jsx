@@ -43,8 +43,6 @@ const Chat = () => {
 
         const chatData = await responseChat.json();
 
-        console.log(chatData.messages);
-
         setChat(chatData.messages || []);
 
       } catch {
@@ -101,7 +99,7 @@ const Chat = () => {
 
         await fetchChat();
 
-      }, 200);
+      }, 100);
 
 
     })();
@@ -110,24 +108,20 @@ const Chat = () => {
 
 
   return (
-    <Layout>
-      <Header as="h2">Dynamic Chat</Header>
+    <Layout header="Chat Room">
       <p>This page was loaded asynchronously!</p>
+      <MessageList messages={chat} />
       <SingleInput
         name="message"
         element={author}
         setElement={setAuthor}
         label="Set your name (not fucker le chien):"
       />
-      <br />
       <SingleInputForm
         element={newMessage}
         setElement={setNewMessage}
         label="POST a new message:"
       />
-      <br />
-      <MessageList messages={chat} />
-      <br />
     </Layout>
   );
 

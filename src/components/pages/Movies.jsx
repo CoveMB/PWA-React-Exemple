@@ -56,7 +56,7 @@ const Home = () => {
 
 
   return (
-    <Layout>
+    <Layout header="Movie Search">
 
       <SingleInputForm
         name="movie"

@@ -11,8 +11,8 @@ if (typeof indexDb === 'undefined') {
 }
 
 
-const CACHE_STATIC_NAME = 'static-v3';
-const CACHE_DYNAMIC_NAME = 'dynamic-v3';
+const CACHE_STATIC_NAME = 'static-v1';
+const CACHE_DYNAMIC_NAME = 'dynamic-v1';
 const STATIC_FILES = [
   '/',
   '/index.html',
@@ -213,5 +213,28 @@ self.addEventListener('sync', async (event) => {
     });
 
   }
+
+});
+
+
+self.addEventListener('notificationclick', async (event) => {
+
+  const { notification, action } = event;
+
+  if (action === 'confirm') {
+
+    notification.close();
+
+  } else if (action === 'confused') {
+
+    notification.close();
+    clients.openWindow('https://www.computerhope.com/issues/ch001918.htm');
+
+  }
+
+});
+
+self.addEventListener('notificationclose', async (event) => {
+
 
 });

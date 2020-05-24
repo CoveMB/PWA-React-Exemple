@@ -1,4 +1,38 @@
 import React from 'react';
+import styled from 'styled-components';
+import { mainColor, lightColor } from '../Shared/Style/colors';
+import { scrollbar } from '../Shared/Style/scrollbar';
+
+export const MessageBox = styled.div`
+  ${scrollbar}
+  width: 100%;
+  height: 52vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border: 2px solid ${mainColor};
+  border-radius: 4px;
+`;
+
+export const Message = styled.div`
+  font-style: normal;
+  font-size: 22px;
+  line-height: 20px;
+  margin: 10px 0 0 0;
+  width: 100%;
+  border-radius: 4px;
+  background: ${lightColor};
+  padding: 15px;
+  word-wrap: break-word;
+`;
+
+export const TimeMessage = styled.div`
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.6);
+`;
 
 const MessageList = ({ messages }) => {
 
@@ -14,27 +48,33 @@ const MessageList = ({ messages }) => {
   return (
     <>
 
-      <br />
+      <MessageBox>
 
-      {messages.map((message) => (
-        <h4 key={message.id}>
-          {message.content}
-          <br />
-          posted
-          {' '}
-          <span>
-            {getMinutes(message.updated_at)}
-            {' '}
-            minutes ago
-          </span>
-          {' '}
-          by
-          {' '}
-          {message.author}
-        </h4>
-      ))}
+        {messages.map((message) => (
+          <Message key={message.id}>
+            <h4>
+              {message.content}
+            </h4>
+            <TimeMessage>
 
-      <br />
+              posted
+              {' '}
+              <span>
+                {getMinutes(message.updated_at)}
+                {' '}
+                minutes ago
+              </span>
+              {' '}
+              by
+              {' '}
+              {message.author}
+            </TimeMessage>
+          </Message>
+        ))}
+
+      </MessageBox>
+
+
     </>
 
   );

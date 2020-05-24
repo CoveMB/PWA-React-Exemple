@@ -5,6 +5,7 @@ import Movies from './Movies';
 import Loading from '../Shared/Loading'
 
 const Chat = lazy(() => import(/* webpackChunkName:'DynamicPage' */ './Chat'));
+const Setting = lazy(() => import(/* webpackChunkName:'DynamicPage' */ './Setting'));
 const AsyncNoMatch = lazy(() => import(/* webpackChunkName:'NoMatch' */ './NoMatch'));
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Movies} />
           <Route exact path="/chat" component={Chat} />
+          <Route exact path="/settings" component={Setting} />
           <Route component={AsyncNoMatch} />
         </Switch>
       </Suspense>
