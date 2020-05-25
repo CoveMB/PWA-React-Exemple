@@ -114,7 +114,7 @@ const Chat = () => {
         name="message"
         element={author}
         setElement={setAuthor}
-        label="Set your name (not fucker le chien):"
+        label="Set your name:"
       />
       <SingleInputForm
         element={newMessage}
