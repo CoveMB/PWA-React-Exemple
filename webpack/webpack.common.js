@@ -67,7 +67,7 @@ const config = {
         from: 'public/manifest.json'
       },
       {
-        from: 'public/.well-known'
+        from: 'public/.well-known', to: '.well-known'
       },
       {
         from: 'public/offline.html'
