@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.netlify.pwaboilerplate",
+      "sha256_cert_fingerprints": [
+        "B4:9B:5D:1D:CE:2A:AD:FF:70:2B:7D:F3:55:6A:34:38:73:C8:82:8E:DA:7A:52:DA:D4:33:C3:E4:62:92:75:C8"
+      ]
+    }
+  }
+]
