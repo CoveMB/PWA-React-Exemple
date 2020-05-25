@@ -117,7 +117,7 @@ const checkValidServiceWorker = async (swPath, config) => {
 
 const checkSW = async (config) => {
 
-  const swPath = './worker.js';
+  const swPath = '/sw.js';
 
   if (isLocalhost) {
 

@@ -1,14 +1,31 @@
-const { outputPath, appEntry } = require('./common-paths');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { appEntry } = require('./common-paths');
 
 const config = {
-  mode   : 'production',
-  entry  : { app: [ `${appEntry}/index.js` ], },
-  output : { filename: 'static/[name].[hash].js', },
-  devtool: 'source-map',
-  module : {
+  mode        : 'production',
+  entry       : { app: [ `${appEntry}/index.js` ], },
+  output      : { filename: 'static/[name].[hash].js', },
+  devtool     : 'source-map',
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name   : 'styles',
+          test   : /\.css$/,
+          chunks : 'all',
+          enforce: true
+        },
+        vendor: {
+          chunks : 'initial',
+          test   : 'vendor',
+          name   : 'vendor',
+          enforce: true
+        }
+      }
+    }
+  },
+  module: {
     rules: [
       {
         test: /\.css$/,
@@ -28,7 +45,7 @@ const config = {
       },
     ],
   },
-  plugins: [ new CleanWebpackPlugin({outputPath}), new MiniCssExtractPlugin({ filename: 'styles/[name].[hash].css', }), ],
+  plugins: [ new MiniCssExtractPlugin({ filename: 'styles/[name].[hash].css', }), ],
 };
 
 module.exports = config;

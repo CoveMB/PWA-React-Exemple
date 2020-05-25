@@ -4,8 +4,8 @@ import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import Movies from './Movies';
 import Loading from '../Shared/Loading'
 
-const Chat = lazy(() => import(/* webpackChunkName:'DynamicPage' */ './Chat'));
-const Setting = lazy(() => import(/* webpackChunkName:'DynamicPage' */ './Setting'));
+const Chat = lazy(() => import(/* webpackChunkName:'Chat' */ './Chat'));
+const Setting = lazy(() => import(/* webpackChunkName:'Setting' */ './Setting'));
 const AsyncNoMatch = lazy(() => import(/* webpackChunkName:'NoMatch' */ './NoMatch'));
 
 const App = () => {

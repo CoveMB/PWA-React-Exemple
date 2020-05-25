@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/pages/App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './service-worker/swRegister';
 
 const render = (Component) => ReactDOM.render(<Component />, document.getElementById('root'));
 

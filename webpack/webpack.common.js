@@ -2,19 +2,13 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const dotenv = require('dotenv');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { outputPath } = require('./common-paths');
 
+
 const config = {
-
-  // env: Object.keys(process.env).reduce((acc, curr) => {
-
-  //   acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-
-  //   return acc;
-
-  // }, {}),
-  // env   : dotenv.config().parsed,
   entry : { vendor: [ 'semantic-ui-react' ] },
   output: {
     path      : outputPath,
@@ -54,30 +48,28 @@ const config = {
     ],
     modules: [ 'src', 'node_modules' ],
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name   : 'styles',
-          test   : /\.css$/,
-          chunks : 'all',
-          enforce: true
-        },
-        vendor: {
-          chunks : 'initial',
-          test   : 'vendor',
-          name   : 'vendor',
-          enforce: true
-        }
-      }
-    }
-  },
   plugins: [
+    new CleanWebpackPlugin({ outputPath }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       favicon : 'public/favicon.ico'
     }),
-    new CopyWebpackPlugin([ { from: 'public' } ]),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc                        : './src/service-worker/serviceWorker.js',
+      swDest                       : 'sw.js',
+      maximumFileSizeToCacheInBytes: 20000000,
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'public/images', to: 'images'
+      },
+      {
+        from: 'public/manifest.json'
+      },
+      {
+        from: 'public/offline.html'
+      }
+    ]),
     new webpack.DefinePlugin({ 'process.env': JSON.stringify(dotenv.config().parsed) })
   ]
 };

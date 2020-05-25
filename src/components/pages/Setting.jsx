@@ -9,46 +9,46 @@ const Setting = () => {
 
   useEffect(() => {
 
-    (async () => {
+    // (async () => {
 
-      const notification = 'Notification enabled';
-      const notificationOptions = {
-        body    : 'You can turn them off in your settings',
-        badge   : '/images/icons/app-icon-72x72.png',
-        icon    : '/images/icons/app-icon-72x72.png',
-        renotify: true,
-        tag     : 'confirm-notification',
-        vibrate : [
-          100,
-          50,
-          20
-        ],
-        actions: [
-          {
-            action: 'confirm', title: 'Noted!'
-          },
-          {
-            action: 'confused', title: 'What?'
-          }
-        ]
-      };
+    //   const notification = 'Notification enabled';
+    //   const notificationOptions = {
+    //     body    : 'You can turn them off in your settings',
+    //     badge   : '/images/icons/app-icon-72x72.png',
+    //     icon    : '/images/icons/app-icon-72x72.png',
+    //     renotify: true,
+    //     tag     : 'confirm-notification',
+    //     vibrate : [
+    //       100,
+    //       50,
+    //       20
+    //     ],
+    //     actions: [
+    //       {
+    //         action: 'confirm', title: 'Noted!'
+    //       },
+    //       {
+    //         action: 'confused', title: 'What?'
+    //       }
+    //     ]
+    //   };
 
-      if ('serviceWorker' in navigator) {
+    //   if ('serviceWorker' in navigator) {
 
 
-        // If the service worker is available in the the browser use it to show notification
-        const sw = await navigator.serviceWorker.ready;
+    //     // If the service worker is available in the the browser use it to show notification
+    //     const sw = await navigator.serviceWorker.ready;
 
-        sw.showNotification(notification, notificationOptions);
+    //     sw.showNotification(notification, notificationOptions);
 
-      } else {
+    //   } else {
 
-        // Else use regular notification API
-        new Notification(notification, notificationOptions);
+    //     // Else use regular notification API
+    //     new Notification(notification, notificationOptions);
 
-      }
+    //   }
 
-    })();
+    // })();
 
   }, []);
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from 'semantic-ui-react';
 import SingleInputForm from '../Shared/Form/SingleInputForm';
 import SingleInput from '../Shared/Form/SingleInput';
-import { writeDb, readDb } from '../../indexDb';
+import { writeDb, readDb } from '../../service-worker/indexDb';
 import MessageList from '../Chat/MessageList';
 import Layout from '../Layout/Layout';
 
