@@ -13,25 +13,47 @@ const Chat = () => {
   const batch = '329';
   const baseUrl = 'https://wagon-chat.herokuapp.com/';
 
+  const postNewMessage = async () => {
+
+    await fetch(`${baseUrl + batch}/messages`, {
+      method: 'POST',
+      body  : JSON.stringify(newMessage)
+    });
+
+  };
 
   const syncData = async () => {
 
-    const sw = await navigator.serviceWorker.ready;
+    try {
 
-    if (newMessage) {
+      const sw = await navigator.serviceWorker.ready;
 
-      const postData = {
-        id    : new Date().toISOString(),
-        result: {
-          content: newMessage, author
-        }
-      };
+      await sw.sync.register('sync-new-message');
 
-      await writeDb('sync-chat', postData);
+    } catch (error) {
+
+      console.log('The sync where not registered do to a permission denied error');
+
+      if (newMessage) {
+
+        await postNewMessage();
+
+      }
 
     }
 
-    await sw.sync.register('sync-new-message');
+  };
+
+  const addMessageSyncDB = async () => {
+
+    const postData = {
+      id    : new Date().toISOString(),
+      result: {
+        content: newMessage, author
+      }
+    };
+
+    await writeDb('sync-chat', postData);
 
   };
 
@@ -40,7 +62,6 @@ const Chat = () => {
     try {
 
       try {
-
 
         const responseChat = await fetch(`${baseUrl + batch}/messages`);
 
@@ -60,7 +81,6 @@ const Chat = () => {
 
         }
 
-
       }
 
     } catch (error) {
@@ -71,36 +91,35 @@ const Chat = () => {
 
   };
 
-  const postNewMessage = async () => {
-
-    await fetch(`${baseUrl + batch}/messages`, {
-      method: 'POST',
-      body  : JSON.stringify(newMessage)
-    });
-
-  };
-
   useEffect(() => {
 
     (async () => {
 
+      if (newMessage) {
 
-      if ('SyncManager' in window) {
+        if ('SyncManager' in window) {
 
-        await syncData();
+          await addMessageSyncDB();
 
-      } else {
+        } else {
 
-        await postNewMessage();
+          await postNewMessage();
+
+        }
 
       }
 
-      setTimeout(async () => {
+      // Sync data for new message if any messages where sent offline
+      await syncData();
+
+      // Fetch new messages (the timeout insure that new messages sent through service worker would have reach the server)
+      const timer = setTimeout(async () => {
 
         await fetchChat();
 
       }, 50);
 
+      return () => clearTimeout(timer);
 
     })();
 
