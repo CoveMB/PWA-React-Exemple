@@ -16,14 +16,20 @@ const config = {
           chunks : 'all',
           enforce: true
         },
-        vendor: {
-          chunks : 'initial',
-          test   : 'vendor',
-          name   : 'vendor',
-          enforce: true
-        }
+        vendors: {
+          test  : /[\\/]node_modules[\\/]/,
+          name  : 'vendors',
+          chunks: 'initial',
+        },
+        async: {
+          test     : /[\\/]node_modules[\\/]/,
+          name     : 'async',
+          chunks   : 'async',
+          minChunks: 4,
+        },
       }
-    }
+    },
+    runtimeChunk: true,
   },
   module: {
     rules: [
