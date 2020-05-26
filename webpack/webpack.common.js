@@ -64,10 +64,13 @@ const config = {
         from: 'public/images', to: 'images'
       },
       {
+        from: 'public/.well-known', to: '.well-known'
+      },
+      {
         from: 'public/manifest.json'
       },
       {
-        from: 'public/.well-known', to: '.well-known'
+        from: 'public/_redirects'
       },
       {
         from: 'public/offline.html'
