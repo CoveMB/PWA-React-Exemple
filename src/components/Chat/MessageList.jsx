@@ -11,8 +11,9 @@ export const MessageBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 5px 20px;
-  border: 2px solid ${mainColor};
+  box-shadow: inset 0 0 6px rgba(71,16,122,0.4);
   border-radius: 4px;
+  background-color: #fff
 `;
 
 export const Message = styled.div`
