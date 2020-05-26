@@ -18,14 +18,18 @@ const Chat = () => {
 
     const sw = await navigator.serviceWorker.ready;
 
-    const postData = {
-      id    : new Date().toISOString(),
-      result: {
-        content: newMessage, author
-      }
-    };
+    if (newMessage) {
 
-    await writeDb('sync-chat', postData);
+      const postData = {
+        id    : new Date().toISOString(),
+        result: {
+          content: newMessage, author
+        }
+      };
+
+      await writeDb('sync-chat', postData);
+
+    }
 
     await sw.sync.register('sync-new-message');
 
@@ -80,17 +84,14 @@ const Chat = () => {
 
     (async () => {
 
-      if (newMessage.length > 0) {
 
-        if ('SyncManager' in window) {
+      if ('SyncManager' in window) {
 
-          await syncData();
+        await syncData();
 
-        } else {
+      } else {
 
-          await postNewMessage();
-
-        }
+        await postNewMessage();
 
       }
 
@@ -98,7 +99,7 @@ const Chat = () => {
 
         await fetchChat();
 
-      }, 100);
+      }, 50);
 
 
     })();

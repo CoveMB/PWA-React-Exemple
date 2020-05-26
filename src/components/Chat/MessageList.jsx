@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mainColor, lightColor } from '../Shared/Style/colors';
+import { lightColor } from '../Shared/Style/colors';
 import { scrollbar } from '../Shared/Style/scrollbar';
 
 export const MessageBox = styled.div`
@@ -9,9 +9,8 @@ export const MessageBox = styled.div`
   height: 52vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 5px 20px;
-  box-shadow: inset 0 0 6px rgba(71,16,122,0.4);
+  box-shadow: inset 0 0 4px rgba(71,16,122,0.4);
   border-radius: 4px;
   background-color: #fff
 `;
