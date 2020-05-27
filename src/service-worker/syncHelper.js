@@ -12,8 +12,6 @@ const handleSync = async (event) => {
     const requestUrl = `${baseUrl + batch}/messages`;
     const allData = await readDb('sync-chat');
 
-    console.log(allData);
-
     allData.forEach(async (data) => {
 
       try {
