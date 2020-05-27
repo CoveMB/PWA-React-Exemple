@@ -18,7 +18,6 @@ const STATIC_FILES = [
   '/storageJs/idb.js',
   '/offline.html',
   '/favicon.ico',
-  '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css',
 ];
 
 self.addEventListener('install', async () => {

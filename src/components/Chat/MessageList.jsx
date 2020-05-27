@@ -9,7 +9,6 @@ export const MessageBox = styled.div`
   height: 52vh;
   display: flex;
   flex-direction: column;
-  padding: 5px 20px;
   box-shadow: inset 0 0 4px rgba(71,16,122,0.4);
   border-radius: 4px;
   background-color: #fff

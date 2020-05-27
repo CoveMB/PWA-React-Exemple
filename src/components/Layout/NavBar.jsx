@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { mainColor } from '../Shared/Style/colors';
 
 export const Div = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: 15px 20px 5px 20px;
   background-color: ${mainColor};
   margin-bottom: 0;
+  font-family: 'Roboto Slab', serif;
 `;
 
 export const Header = styled.h1`

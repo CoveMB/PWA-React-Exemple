@@ -74,6 +74,9 @@ const config = {
       },
       {
         from: 'public/offline.html'
+      },
+      {
+        from: 'public/robots.txt'
       }
     ]),
     new webpack.DefinePlugin({ 'process.env': JSON.stringify(dotenv.config().parsed) })
