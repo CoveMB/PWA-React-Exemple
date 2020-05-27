@@ -12,7 +12,7 @@ const Chat = () => {
 
   const permissions = useContext(PermissionContext);
   const [ newMessage, setNewMessage ] = useState('');
-  const [ sender, setSender ] = useState('theUndefinedPerson');
+  const [ sender, setSender ] = useState('Incognito');
   const [ chat, setChat ] = useState([]);
   const batch = '329';
   const baseUrl = 'https://wagon-chat.herokuapp.com/';

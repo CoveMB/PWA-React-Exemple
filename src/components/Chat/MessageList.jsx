@@ -8,6 +8,7 @@ const MessagesBox = styled.div`
   width: 100%;
   height: 54vh;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   box-shadow: inset 0 0 4px rgba(71,16,122,0.4);
   border-radius: 4px;
@@ -17,19 +18,23 @@ const MessagesBox = styled.div`
 
 const Message = styled.div`
   font-style: normal;
-  font-size: 22px;
+  font-size: 1.2rem;
   line-height: 20px;
-  margin: 10px 0 0 0;
-  width: 100%;
+  margin: 10px 2%;
+  width: 92%;
   border-radius: 4px;
   background: ${lightColor};
-  padding: 15px;
+  padding: 2%;
   word-wrap: break-word;
+`;
+
+const MessageText = styled.p`
+  width: 100%
 `;
 
 const TimeMessage = styled.div`
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8rem;
   text-align: right;
   color: rgba(0, 0, 0, 0.6);
 `;
@@ -52,9 +57,9 @@ const MessageList = ({ messages }) => {
 
         {messages.map((message) => (
           <Message key={message.id}>
-            <h4>
+            <MessageText>
               {message.content}
-            </h4>
+            </MessageText>
             <TimeMessage>
 
               posted
