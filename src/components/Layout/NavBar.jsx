@@ -3,24 +3,24 @@ import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { mainColor } from '../Shared/Style/colors';
 
-export const Div = styled.div`
+const Div = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: 15px 20px 5px 20px;
   background-color: ${mainColor};
   margin-bottom: 0;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', serif;
 `;
 
-export const Header = styled.h1`
+const Header = styled.h1`
   color: white;
   font-size: 22px;
   font-weight: bold;
   margin: 0;
 `;
 
-export const NavLink = styled.p`
+const NavLink = styled.p`
   color: white;
   font-size: 15px;
 `;
@@ -29,7 +29,7 @@ const spin = keyframes`
   100% { transform: rotate(360deg);
 }`;
 
-export const Icon = styled.img`
+const Icon = styled.img`
   width:26px;
   margin-right: 10px;
   animation: ${spin} 16s linear infinite;

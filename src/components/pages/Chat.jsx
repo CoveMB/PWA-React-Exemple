@@ -121,18 +121,17 @@ const Chat = () => {
 
   return (
     <Layout header="Chat Room">
-      <p>This page was loaded asynchronously!</p>
-      <MessageList messages={chat} />
       <SingleInput
         name="message"
         element={sender}
         setElement={setSender}
         label="Set your name:"
       />
+      <MessageList messages={chat} />
       <SingleInputForm
+        name="author"
         element={newMessage}
         setElement={setNewMessage}
-        label="POST a new message:"
       />
     </Layout>
   );

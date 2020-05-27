@@ -5,7 +5,7 @@ const Header = styled.p`
   text-align: center;
   font-size: 26px;
   font-weight: bold;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', serif;
 `;
 
 

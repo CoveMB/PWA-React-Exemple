@@ -3,18 +3,19 @@ import styled from 'styled-components';
 import { lightColor } from '../Shared/Style/colors';
 import { scrollbar } from '../Shared/Style/scrollbar';
 
-export const MessageBox = styled.div`
+const MessagesBox = styled.div`
   ${scrollbar}
   width: 100%;
-  height: 52vh;
+  height: 54vh;
   display: flex;
   flex-direction: column;
   box-shadow: inset 0 0 4px rgba(71,16,122,0.4);
   border-radius: 4px;
-  background-color: #fff
+  background-color: #fff;
+  margin: 10px 0;
 `;
 
-export const Message = styled.div`
+const Message = styled.div`
   font-style: normal;
   font-size: 22px;
   line-height: 20px;
@@ -26,7 +27,7 @@ export const Message = styled.div`
   word-wrap: break-word;
 `;
 
-export const TimeMessage = styled.div`
+const TimeMessage = styled.div`
   font-weight: bold;
   font-size: 14px;
   text-align: right;
@@ -47,7 +48,7 @@ const MessageList = ({ messages }) => {
   return (
     <>
 
-      <MessageBox>
+      <MessagesBox>
 
         {messages.map((message) => (
           <Message key={message.id}>
@@ -71,7 +72,7 @@ const MessageList = ({ messages }) => {
           </Message>
         ))}
 
-      </MessageBox>
+      </MessagesBox>
 
 
     </>

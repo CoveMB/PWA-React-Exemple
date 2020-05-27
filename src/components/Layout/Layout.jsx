@@ -17,12 +17,16 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     overflow-x: hidden;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 
-export const Container = styled.div`
-  margin: 0 6vw;
-  font-family: 'Montserrat', serif;
+const Container = styled.div`
+  margin: 0 8vw;
+  font-family: 'Roboto', serif;
 `;
 
 

@@ -1,17 +1,32 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { Form } from 'semantic-ui-react';
 import { button } from '../Style/button';
+import { mainColor } from '../Style/colors';
 
-export const Div = styled.div`
+const Div = styled.div`
   width: 100%;
   display: flex;
-  align-items: stretch
+  justify-content: center;
+  align-items: stretch;
 `;
 
-export const SubmitButton = styled.input`
+const SubmitButton = styled.input`
   ${button}
-  margin-left: 10px;
+  margin-left: 6%;
+  width: 27%;
+  height: 40px;
+`;
+
+const Input = styled.input`
+  width: 67%;
+  border-radius: 4px;
+  border: 1px solid ${mainColor} 
+`;
+
+const Label = styled.label`
+  width: 100%;
+  margin-bottom: 10px;
+  display: block
 `;
 
 const SingleInputForm = ({
@@ -29,26 +44,18 @@ const SingleInputForm = ({
 
   return (
     <>
-
-      <br />
-      <Form onSubmit={handleSubmit}>
-        <Form.Field>
-          <label htmlFor={name}>{label}</label>
-          <Div>
-            <input
-              id={name}
-              name={name}
-              placeholder={element}
-              ref={inputRef}
-            />
-
-            <SubmitButton type="submit" />
-          </Div>
-        </Form.Field>
-
-
-      </Form>
-
+      <form onSubmit={handleSubmit}>
+        <Label htmlFor={name}>{label}</Label>
+        <Div>
+          <Input
+            id={name}
+            name={name}
+            placeholder={element}
+            ref={inputRef}
+          />
+          <SubmitButton type="submit" />
+        </Div>
+      </form>
     </>
 
   );

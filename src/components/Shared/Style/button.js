@@ -5,7 +5,7 @@ export const button = css`
   color: white;
   text-decoration: none;
   background: ${mainColor};
-  border-radius: 5px;
+  border-radius: 4px;
   display: inline-block;
   border: none;
 `;
