@@ -1,55 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import SingleInputForm from '../Shared/Form/SingleInputForm';
 import SingleInput from '../Shared/Form/SingleInput';
 import { writeDb, readDb } from '../../service-worker/indexDb';
 import MessageList from '../Chat/MessageList';
 import Layout from '../Layout/Layout';
+import PermissionContext from '../contexts/permissions';
+import { syncData } from '../../service-worker/backgroundSync';
+import Loading from '../Shared/Loading';
 
 const Chat = () => {
 
+  const permissions = useContext(PermissionContext);
   const [ newMessage, setNewMessage ] = useState('');
-  const [ author, setAuthor ] = useState('theUndefinedPerson');
+  const [ sender, setSender ] = useState('theUndefinedPerson');
   const [ chat, setChat ] = useState([]);
   const batch = '329';
   const baseUrl = 'https://wagon-chat.herokuapp.com/';
+  const chatUrl = `${baseUrl + batch}/messages`;
 
-  const postNewMessage = async () => {
+  const postNewMessage = async (content, author, url) => {
 
-    await fetch(`${baseUrl + batch}/messages`, {
+    await fetch(url, {
       method: 'POST',
-      body  : JSON.stringify(newMessage)
+      body  : JSON.stringify({
+        content, author
+      })
     });
 
   };
 
-  const syncData = async () => {
-
-    try {
-
-      const sw = await navigator.serviceWorker.ready;
-
-      await sw.sync.register('sync-new-message');
-
-    } catch (error) {
-
-      console.log('The sync where not registered do to a permission denied error');
-
-      if (newMessage) {
-
-        await postNewMessage();
-
-      }
-
-    }
-
-  };
-
-  const addMessageSyncDB = async () => {
+  const addMessageSyncDB = async (content, author) => {
 
     const postData = {
       id    : new Date().toISOString(),
       result: {
-        content: newMessage, author
+        content, author
       }
     };
 
@@ -57,13 +42,13 @@ const Chat = () => {
 
   };
 
-  const fetchChat = async () => {
+  const fetchChat = async (url) => {
 
     try {
 
       try {
 
-        const responseChat = await fetch(`${baseUrl + batch}/messages`);
+        const responseChat = await fetch(url);
 
         const chatData = await responseChat.json();
 
@@ -91,31 +76,39 @@ const Chat = () => {
 
   };
 
+
   useEffect(() => {
 
     (async () => {
 
+      const { backgroundSync } = await permissions;
+
+
       if (newMessage) {
 
-        if ('SyncManager' in window) {
+        if (('SyncManager' in window) && backgroundSync) {
 
-          await addMessageSyncDB();
+          await addMessageSyncDB(newMessage, sender);
 
         } else {
 
-          await postNewMessage();
+          await postNewMessage(newMessage, sender, chatUrl);
 
         }
 
       }
 
-      // Sync data for new message if any messages where sent offline
-      await syncData();
+      if (backgroundSync) {
+
+        // Sync data for new message if any messages where sent offline
+        await syncData('sync-new-message');
+
+      }
 
       // Fetch new messages (the timeout insure that new messages sent through service worker would have reach the server)
       const timer = setTimeout(async () => {
 
-        await fetchChat();
+        await fetchChat(chatUrl);
 
       }, 50);
 
@@ -132,8 +125,8 @@ const Chat = () => {
       <MessageList messages={chat} />
       <SingleInput
         name="message"
-        element={author}
-        setElement={setAuthor}
+        element={sender}
+        setElement={setSender}
         label="Set your name:"
       />
       <SingleInputForm

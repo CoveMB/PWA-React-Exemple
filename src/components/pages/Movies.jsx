@@ -8,13 +8,13 @@ const Home = () => {
 
   const [ movies, setMovies ] = useState([]);
   const [ searchedMovie, setSearchedMovie ] = useState('');
+  const omdbKey = process.env.REACT_APP_API_KEY;
 
-  const fetchMovies = async () => {
+  const fetchMovies = async (movieToSearch, apiKey) => {
 
-    if (searchedMovie.length > 1) {
+    if (movieToSearch) {
 
-      const requestUrl = `https://www.omdbapi.com/?s=${searchedMovie}&apikey=${process.env.REACT_APP_API_KEY}`;
-      const fetchCompleted = false;
+      const requestUrl = `https://www.omdbapi.com/?s=${movieToSearch}&apikey=${apiKey}`;
 
       try {
 
@@ -30,7 +30,7 @@ const Home = () => {
 
           const historySearch = await readDb('omdbapi');
 
-          const foundHistoric = historySearch.find((historic) => historic.id === searchedMovie);
+          const foundHistoric = historySearch.find((historic) => historic.id === movieToSearch);
 
           setMovies(foundHistoric.result || []);
 
@@ -49,7 +49,7 @@ const Home = () => {
 
   useEffect(() => {
 
-    fetchMovies();
+    fetchMovies(searchedMovie, omdbKey);
 
   }, [ searchedMovie ]);
 
