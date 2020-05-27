@@ -33,9 +33,10 @@ const SingleInputForm = ({
       <br />
       <Form onSubmit={handleSubmit}>
         <Form.Field>
+          <label htmlFor={name}>{label}</label>
           <Div>
-            <label htmlFor={name}>{label}</label>
             <input
+              id={name}
               name={name}
               placeholder={element}
               ref={inputRef}
