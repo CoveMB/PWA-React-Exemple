@@ -39,7 +39,7 @@ const Message = ({
   };
 
   return (
-    <Animated animationIn="fadeIn" animationOut="bounceOutRight" isVisible>
+    <Animated animationIn="fadeIn" isVisible>
       <MessageWrapper>
         <MessageText>
           {content}
