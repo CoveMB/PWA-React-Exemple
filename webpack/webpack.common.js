@@ -5,11 +5,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const dotenv = require('dotenv');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { outputPath } = require('./common-paths');
+const { outputPath, appEntry, publicPath } = require('./common-paths');
 
 
 const config = {
-  entry : { vendor: [ 'semantic-ui-react' ] },
+  entry : `${appEntry}/index.js`,
   output: {
     path      : outputPath,
     publicPath: '/'
@@ -41,6 +41,15 @@ const config = {
     ]
   },
   resolve: {
+    alias: {
+      Components: `${appEntry}/components/`,
+      Style     : `${appEntry}/style/`,
+      Images    : `${publicPath}/images/`,
+      Shared    : `${appEntry}/components/shared/`,
+      Hooks     : `${appEntry}/hooks/`,
+      Contexts  : `${appEntry}/contexts/`,
+      Sw        : `${appEntry}/service-worker/`
+    },
     extensions: [
       '*',
       '.js',

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { scrollbar } from 'Style/scrollbar';
 import NavWave from './NavWave';
 import NavBar from './NavBar';
 import PageHeader from './PageHeader';
-import { scrollbar } from '../Shared/Style/scrollbar';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     padding-bottom: 20px;
     overflow-x: hidden;
+    background-color: white;
   }
 
   a {
@@ -33,13 +34,13 @@ const Container = styled.div`
 `;
 
 
-const Layout = ({ children, header }) => (
+const Layout = ({ children, header, animation }) => (
   <>
     <GlobalStyle />
     <NavBar />
     <NavWave />
     <Container>
-      <PageHeader text={header} />
+      <PageHeader text={header} animation={animation} />
       {children}
     </Container>
   </>

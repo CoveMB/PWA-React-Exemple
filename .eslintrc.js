@@ -1,5 +1,4 @@
 module.exports = {
-
   parserOptions: {
     ecmaVersion: 10,
     parser: "babel-eslint"
@@ -11,15 +10,33 @@ module.exports = {
   plugins: [
     'eslint-plugin',
   ],
-  settings: {
-    'import/resolver':{
-      node:{
-        extensions: ['.js'],
-        moduleDirectory: ['node_modules', './src']
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/webpack.common.js",
       }
     }
   },
+  // settings: {
+  //   'import/resolver': {
+  //       alias:{ 
+  //       map: [
+  //         ['Style', './src/style'],
+  //         ['Components', './src/components'],
+  //         ['Shared', './src/components/shared'],
+  //         ['Hooks', './src/hooks'],
+  //         ['Contexts', './src/contexts'],
+  //         ['Sw', './src/service-worker'],
+  //         ['Images', './public/images'],
+  //       ]}
+  //     },
+  //     node:{
+  //       extensions: ['.js'],
+  //       moduleDirectory: ['node_modules', './src']
+  //     }
+  // },
   "rules": {
+    "no-extraneous-dependencies": "off",
     "max-len": [
       "warn",
       {

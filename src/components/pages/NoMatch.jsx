@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../Layout/Layout';
+import Layout from '../layout/Layout';
 
 const NoMatch = () => (
   <Layout>

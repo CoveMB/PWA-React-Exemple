@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { mainColor } from '../Style/colors';
+import { mainColor } from 'Style/colors';
 
 const Div = styled.div`
   width: 100%;

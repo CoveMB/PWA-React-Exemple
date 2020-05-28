@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import MovieList from '../Movie/MovieList';
-import Layout from '../Layout/Layout';
-import SingleInputForm from '../Shared/Form/SingleInputForm';
-import { readDb } from '../../service-worker/indexDb';
+import SingleInputForm from 'Shared/Form/SingleInputForm';
+import MovieList from 'Components/movie/MovieList';
+import Layout from 'Components/layout/Layout';
+import { readDb } from 'Sw/indexDb';
 
 const Home = () => {
 
@@ -44,7 +44,6 @@ const Home = () => {
 
     }
 
-
   };
 
   useEffect(() => {
@@ -55,8 +54,7 @@ const Home = () => {
 
 
   return (
-    <Layout header="Movie Search">
-
+    <Layout header="Movie Search" animation="search">
       <SingleInputForm
         name="movie"
         element={searchedMovie}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Checkbox } from 'semantic-ui-react';
-import Layout from '../Layout/Layout';
+
+// import { Checkbox } from 'semantic-ui-react';
+import Layout from '../layout/Layout';
 
 const Setting = () => {
 
@@ -107,8 +108,8 @@ const Setting = () => {
   };
 
   return (
-    <Layout header="Setting Page">
-      { ('Notification' in window) && <Checkbox toggle label="Enable notification" onChange={toggleNotification} checked={Notification.permission === 'granted' || enableNotification} />}
+    <Layout header="Setting Page" animation="settings">
+      {/* { ('Notification' in window) && <Checkbox toggle label="Enable notification" onChange={toggleNotification} checked={Notification.permission === 'granted' || enableNotification} />} */}
     </Layout>
   );
 

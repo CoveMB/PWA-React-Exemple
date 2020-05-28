@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { mainColor } from '../Shared/Style/colors';
+import { mainColor } from 'Style/colors';
 
 const Div = styled.div`
   display: flex;

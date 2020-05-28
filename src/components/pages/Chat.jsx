@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
-import SingleInputForm from '../Shared/Form/SingleInputForm';
-import SingleInput from '../Shared/Form/SingleInput';
-import { writeDb, readDb } from '../../service-worker/indexDb';
-import MessageList from '../Chat/MessageList';
-import Layout from '../Layout/Layout';
-import PermissionContext from '../contexts/permissions';
-import { syncData } from '../../service-worker/backgroundSync';
-import Loading from '../Shared/Loading';
+import SingleInputForm from 'Shared/Form/SingleInputForm';
+import SingleInput from 'Shared/Form/SingleInput';
+import PermissionContext from 'Contexts/permissions';
+import { writeDb, readDb } from 'Sw/indexDb';
+import { syncData } from 'Sw/backgroundSync';
+import MessageList from '../chat/MessageList';
+import Layout from '../layout/Layout';
+
 
 const Chat = () => {
 
@@ -17,6 +17,7 @@ const Chat = () => {
   const batch = '329';
   const baseUrl = 'https://wagon-chat.herokuapp.com/';
   const chatUrl = `${baseUrl + batch}/messages`;
+
 
   const postNewMessage = async (content, author, url) => {
 
@@ -120,7 +121,7 @@ const Chat = () => {
 
 
   return (
-    <Layout header="Chat Room">
+    <Layout header="Chat Room" animation="phone">
       <SingleInput
         name="message"
         element={sender}

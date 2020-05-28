@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mainColor } from '../Shared/Style/colors';
+import { mainColor } from 'Style/colors';
 
 const Wave = styled.img`
   transform: rotate(180deg);

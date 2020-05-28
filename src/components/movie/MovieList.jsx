@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Animated } from 'react-animated-css';
 
 const MovieImg = styled.img`
   width: 100px;
@@ -21,10 +22,12 @@ const Movies = styled.div`
 const MovieList = ({ movies }) => (
   <Movies>
     {movies.map((movie) => (
-      <Movie key={movie.imdbID}>
-        <MovieImg src={movie.Poster} alt={movie.Title} />
-        <center>{movie.Title}</center>
-      </Movie>
+      <Animated animationIn="fadeIn" animationOut="bounceOutRight" isVisible key={movie.imdbID}>
+        <Movie key={movie.imdbID}>
+          <MovieImg src={movie.Poster} alt={movie.Title} />
+          <center>{movie.Title}</center>
+        </Movie>
+      </Animated>
     ))}
   </Movies>
 );

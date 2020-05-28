@@ -21,8 +21,6 @@ const evaluateBackgroundSync = async () => {
 
 const evaluatePermissions = async () => {
 
-  console.log('Evaluating permissions');
-
   const permissions = {};
 
   permissions.backgroundSync = await evaluateBackgroundSync();

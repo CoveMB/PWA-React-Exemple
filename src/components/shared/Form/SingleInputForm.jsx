@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { button } from '../Style/button';
-import { mainColor } from '../Style/colors';
+import { button } from 'Style/button';
+import { mainColor } from 'Style/colors';
 
 const Div = styled.div`
   width: 100%;
