@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const dotenv = require('dotenv');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const { outputPath, appEntry, publicPath } = require('./common-paths');
 
 
@@ -88,7 +89,8 @@ const config = {
         from: 'public/robots.txt'
       }
     ]),
-    new webpack.DefinePlugin({ 'process.env': JSON.stringify(dotenv.config().parsed) })
+    new webpack.DefinePlugin({ 'process.env': JSON.stringify(dotenv.config().parsed) }),
+    new ImageminWebpWebpackPlugin()
   ]
 };
 

@@ -44,7 +44,13 @@ const NavBar = () => (
     </Link>
     <Link to="/settings">
       <Header>
-        <Icon src="/images/icons/app-icon-72x72.png" alt="svg wave" />
+
+        <picture>
+          <source type="image/webp" srcSet="/images/icons/app-icon-72x72.webp" />
+          <source type="image/png" srcSet="/images/icons/app-icon-72x72.png" />
+          <Icon src="/images/icons/app-icon-72x72.png" alt="svg wave" />
+        </picture>
+
         PWA
       </Header>
     </Link>
