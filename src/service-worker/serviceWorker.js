@@ -41,7 +41,7 @@ registerRoute(
 
 // Cache assets (svg|png)
 registerRoute(
-  /.*(?:png|svg|json)$/,
+  /.*(?:png|svg|json|webp)$/,
   new StaleWhileRevalidate({
     cacheName      : 'static-assets',
     cacheExpiration: {

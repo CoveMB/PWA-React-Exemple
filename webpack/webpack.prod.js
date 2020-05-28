@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const { appEntry } = require('./common-paths');
 
 const config = {
@@ -51,7 +52,7 @@ const config = {
       },
     ],
   },
-  plugins: [ new MiniCssExtractPlugin({ filename: 'styles/[name].[hash].css', }), ],
+  plugins: [ new MiniCssExtractPlugin({ filename: 'styles/[name].[hash].css', }), new ImageminWebpWebpackPlugin() ],
 };
 
 module.exports = config;
