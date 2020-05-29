@@ -61,10 +61,7 @@ const Home = () => {
         setElement={setSearchedMovie}
         label="Enter a movie:"
       />
-      <br />
       <MovieList movies={movies} />
-      <br />
-
     </Layout>
 
   );

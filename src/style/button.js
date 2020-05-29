@@ -6,6 +6,11 @@ export const button = css`
   text-decoration: none;
   background: ${mainColor};
   border-radius: 4px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: none;
+  height: 40px;
+  cursor: pointer;
 `;

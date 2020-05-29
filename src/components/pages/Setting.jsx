@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
-// import { Checkbox } from 'semantic-ui-react';
+import { button } from 'Style/button';
 import Layout from '../layout/Layout';
+
+const Button = styled.div`
+  ${button}
+`;
+
 
 const Setting = () => {
 
@@ -104,12 +108,25 @@ const Setting = () => {
 
     }
 
-
   };
+
+  /* <Switch>
+          <Input type="checkbox" onChange={toggleNotification} checked={Notification.permission === 'granted' || enableNotification} />
+          <Slider className="slider round" />
+        </Switch> */
 
   return (
     <Layout header="Setting Page" animation="settings">
-      {/* { ('Notification' in window) && <Checkbox toggle label="Enable notification" onChange={toggleNotification} checked={Notification.permission === 'granted' || enableNotification} />} */}
+
+      { ('Notification' in window) && (
+        <Button
+          onClick={toggleNotification}
+        >
+          Enable Notification
+
+        </Button>
+      )}
+
     </Layout>
   );
 

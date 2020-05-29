@@ -14,7 +14,6 @@ const SubmitButton = styled.input`
   ${button}
   margin-left: 6%;
   width: 27%;
-  height: 40px;
 `;
 
 const Input = styled.input`
