@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { mainColor } from 'Style/colors';
+import { bodyFont } from 'Style/fonts';
 
 const Div = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const Div = styled.div`
   padding: 15px 20px 5px 20px;
   background-color: ${mainColor};
   margin-bottom: 0;
-  font-family: 'Lato', serif;
+  font-family: ${bodyFont};
 `;
 
 const Header = styled.h1`

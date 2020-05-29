@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { scrollbar } from 'Style/scrollbar';
+import { bodyFont } from 'Style/fonts';
 import NavWave from './NavWave';
 import NavBar from './NavBar';
 import PageHeader from './PageHeader';
@@ -30,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
   margin: 0 8vw;
-  font-family: 'Roboto', serif;
+  font-family: ${bodyFont};
 `;
 
 

@@ -97,6 +97,8 @@ const Chat = () => {
 
         }
 
+        setNewMessage('');
+
       }
 
       if (backgroundSync) {

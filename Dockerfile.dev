@@ -1,5 +1,8 @@
 FROM node:13-slim
 
+# This is require for the webpack plugins that convert images to webp
+# RUN  apt install libgl1-mesa-glx
+
 # Set environnement to development
 ENV NODE_ENV=development
 
