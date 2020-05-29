@@ -5,12 +5,14 @@ import searchAnimation from 'Images/animatedIcons/search.json';
 import phoneAnimation from 'Images/animatedIcons/phone.json';
 import settingsAnimation from 'Images/animatedIcons/settings.json';
 import { headerFont } from 'Style/fonts';
+import { mainColor } from 'Style/colors';
 
 const Header = styled.p`
   text-align: center;
   font-size: 26px;
   font-weight: bold;
-  font-family: ${headerFont};
+  color: ${mainColor};
+  font-family: ${headerFont}
 `;
 
 const LottieWrapper = styled.div`
