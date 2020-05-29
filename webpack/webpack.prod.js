@@ -17,10 +17,15 @@ const config = {
           chunks : 'all',
           enforce: true
         },
-        vendors: {
-          test  : /[\\/]node_modules[\\/]/,
-          name  : 'vendors',
-          chunks: 'initial',
+        vendor1: {
+          name   : 'vendor1',
+          test   : 'vendor1',
+          enforce: true
+        },
+        vendor2: {
+          name   : 'vendor2',
+          test   : 'vendor2',
+          enforce: true
         },
         async: {
           test     : /[\\/]node_modules[\\/]/,
