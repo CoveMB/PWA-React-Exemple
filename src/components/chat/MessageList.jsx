@@ -9,7 +9,7 @@ const MessagesBox = styled.div`
   width: 100%;
   height: 54vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   box-shadow: inset 0 0 4px rgba(71,16,122,0.4);
   border-radius: 4px;

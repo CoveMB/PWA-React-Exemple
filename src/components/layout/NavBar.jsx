@@ -47,8 +47,8 @@ const NavBar = () => (
       <Header>
 
         <picture>
-          <source type="image/webp" srcSet="/images/icons/app-icon-72x72.webp" />
           <source type="image/png" srcSet="/images/icons/app-icon-72x72.png" />
+          <source type="image/webp" srcSet="/images/icons/app-icon-72x72.webp" />
           <Icon src="/images/icons/app-icon-72x72.png" alt="Navbar icon" />
         </picture>
 
