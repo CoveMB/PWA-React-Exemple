@@ -13,6 +13,12 @@ const handleNotification = async (event) => {
 
   }
 
+  return setTimeout(() => {
+
+    self.registration.showNotification('Hello again from service worker working in the background');
+
+  }, 40000);
+
 };
 
 const handleCloseNotification = async () => {
