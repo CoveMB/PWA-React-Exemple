@@ -8,7 +8,7 @@ const MovieImg = styled.img`
 
 const Movie = styled.div`
   width: 100px;
-  margin-bottom: 10px;
+  margin: 10px;
 `;
 
 const Movies = styled.div`

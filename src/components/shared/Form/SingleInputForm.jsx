@@ -29,7 +29,7 @@ const Label = styled.label`
 `;
 
 const SingleInputForm = ({
-  element, setElement, label, name
+  element, setElement, placeholder, label, name
 }) => {
 
   const inputRef = useRef();
@@ -38,6 +38,7 @@ const SingleInputForm = ({
 
     event.preventDefault();
     setElement(inputRef.current.value);
+    event.currentTarget.reset();
 
   };
 
@@ -47,9 +48,10 @@ const SingleInputForm = ({
         <Label htmlFor={name}>{label}</Label>
         <Div>
           <Input
+            autoFocus
             id={name}
             name={name}
-            placeholder={element}
+            placeholder={placeholder}
             ref={inputRef}
           />
           <SubmitButton type="submit" />

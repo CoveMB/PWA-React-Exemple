@@ -77,7 +77,6 @@ const Chat = () => {
 
   };
 
-
   useEffect(() => {
 
     (async () => {
@@ -97,8 +96,6 @@ const Chat = () => {
 
         }
 
-        setNewMessage('');
-
       }
 
       if (backgroundSync) {
@@ -116,6 +113,7 @@ const Chat = () => {
       }, 50);
 
       return () => clearTimeout(timer);
+
 
     })();
 
