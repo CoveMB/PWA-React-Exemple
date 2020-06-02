@@ -1,0 +1,25 @@
+{
+  "packageId": "app.netlify.pwa_boilerplate",
+  "host": "pwa-boilerplate.netlify.app",
+  "name": "PWA Boilerplate",
+  "launcherName": "PWA Boilerplate",
+  "themeColor": "#4A0F37",
+  "navigationColor": "#000000",
+  "backgroundColor": "#4A0F37",
+  "enableNotifications": false,
+  "startUrl": "/",
+  "iconUrl": "https://pwa-boilerplate.netlify.app/images/icons/app-icon-512x512.png",
+  "maskableIconUrl": "https://pwa-boilerplate.netlify.app/images/icons/app-icon-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "alias": "android",
+    "path": "./android.keystore"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://pwa-boilerplate.netlify.app/manifest.json",
+  "fallbackType": "customtabs",
+  "appVersion": "1"
+}

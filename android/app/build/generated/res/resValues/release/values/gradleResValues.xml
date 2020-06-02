@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Values from default config. -->
+    <string name="appName" translatable="false">PWA Boilerplate</string>
+    <string name="assetStatements" translatable="false">[{ \"relation\": [\"delegate_permission/common.handle_all_urls\"],\"target\": {\"namespace\": \"web\", \"site\": \"https://pwa-boilerplate.netlify.app\"}}]</string>
+
+    <color name="backgroundColor">#4A0F37</color>
+    <color name="colorPrimary">#4A0F37</color>
+
+    <bool name="enableNotification">false</bool>
+
+    <string name="fallbackType" translatable="false">customtabs</string>
+    <string name="generatorApp" translatable="false">bubblewrap-cli</string>
+    <string name="hostName" translatable="false">pwa-boilerplate.netlify.app</string>
+    <string name="launchUrl" translatable="false">https://pwa-boilerplate.netlify.app/</string>
+    <string name="launcherName" translatable="false">PWA Boilerplate</string>
+
+    <color name="navigationColor">#000000</color>
+
+    <string name="providerAuthority" translatable="false">app.netlify.pwa_boilerplate.fileprovider</string>
+
+    <integer name="splashScreenFadeOutDuration">300</integer>
+
+    <string name="webManifestUrl" translatable="false">https://pwa-boilerplate.netlify.app/manifest.json</string>
+
+</resources>

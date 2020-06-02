@@ -1,0 +1,4 @@
+#Tue Jun 02 11:55:19 EDT 2020
+base.0=/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

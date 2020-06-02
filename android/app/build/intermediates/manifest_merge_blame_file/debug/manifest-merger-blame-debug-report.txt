@@ -1,0 +1,211 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3    Copyright 2019 Google Inc. All Rights Reserved.
+4
+5     Licensed under the Apache License, Version 2.0 (the "License");
+6     you may not use this file except in compliance with the License.
+7     You may obtain a copy of the License at
+8
+9         http://www.apache.org/licenses/LICENSE-2.0
+10
+11     Unless required by applicable law or agreed to in writing, software
+12     distributed under the License is distributed on an "AS IS" BASIS,
+13     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14     See the License for the specific language governing permissions and
+15     limitations under the License.
+16-->
+17<!--
+18 The "package" attribute is rewritten by the Gradle build with the value of applicationId.
+19     It is still required here, as it is used to derive paths, for instance when referring
+20     to an Activity by ".MyActivity" instead of the full name. If more Activities are added to the
+21     application, the package attribute will need to reflect the correct path in order to use
+22     the abbreviated format.
+23-->
+24<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+25    package="app.netlify.pwa_boilerplate"
+26    android:versionCode="1"
+27    android:versionName="1" >
+28
+29    <uses-sdk
+30        android:minSdkVersion="19"
+30-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml
+31        android:targetSdkVersion="29" />
+31-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml
+32
+33    <application
+33-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:27:5-118:19
+34        android:allowBackup="true"
+34-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:28:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.1.0] /home/bjmrq/.gradle/caches/transforms-2/files-2.1/03736cf4bc3669a69d502627b70a527e/core-1.1.0/AndroidManifest.xml:24:18-86
+36        android:debuggable="true"
+37        android:icon="@mipmap/ic_launcher"
+37-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:29:9-43
+38        android:label="@string/appName"
+38-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:30:9-40
+39        android:supportsRtl="true"
+39-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:31:9-35
+40        android:theme="@style/Theme.LauncherActivity" >
+40-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:32:9-54
+41        <meta-data
+41-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:34:9-36:58
+42            android:name="asset_statements"
+42-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:35:13-44
+43            android:resource="@string/assetStatements" />
+43-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:36:13-55
+44        <meta-data
+44-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:39:13-41:58
+45            android:name="web_manifest_url"
+45-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:40:17-48
+46            android:value="@string/webManifestUrl" />
+46-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:41:17-55
+47        <meta-data
+47-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:44:9-46:52
+48            android:name="twa_generator"
+48-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:45:13-41
+49            android:value="@string/generatorApp" />
+49-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:46:13-49
+50
+51        <activity
+51-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:48:9-90:20
+52            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
+52-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:48:19-90
+53            android:label="@string/launcherName" >
+53-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:49:13-49
+54            <meta-data
+54-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:50:13-51:53
+55                android:name="android.support.customtabs.trusted.DEFAULT_URL"
+55-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:50:24-85
+56                android:value="@string/launchUrl" />
+56-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:51:17-50
+57            <meta-data
+57-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:53:13-55:58
+58                android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR"
+58-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:54:17-83
+59                android:resource="@color/colorPrimary" />
+59-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:55:17-55
+60            <meta-data
+60-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:57:13-59:61
+61                android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR"
+61-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:58:17-87
+62                android:resource="@color/navigationColor" />
+62-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:59:17-58
+63            <meta-data
+63-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:61:13-62:54
+64                android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE"
+64-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:61:24-95
+65                android:resource="@drawable/splash" />
+65-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:62:17-52
+66            <meta-data
+66-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:64:13-65:60
+67                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR"
+67-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:64:24-104
+68                android:resource="@color/backgroundColor" />
+68-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:65:17-58
+69            <meta-data
+69-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:67:13-68:71
+70                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_FADE_OUT_DURATION"
+70-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:67:24-105
+71                android:value="@integer/splashScreenFadeOutDuration" />
+71-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:68:17-69
+72            <meta-data
+72-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:70:13-71:60
+73                android:name="android.support.customtabs.trusted.FILE_PROVIDER_AUTHORITY"
+73-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:70:24-97
+74                android:value="@string/providerAuthority" />
+74-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:71:17-58
+75            <meta-data
+75-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:73:13-97
+76                android:name="android.app.shortcuts"
+76-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:73:24-60
+77                android:resource="@xml/shortcuts" />
+77-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:73:61-94
+78            <meta-data
+78-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:75:13-76:56
+79                android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY"
+79-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:75:24-91
+80                android:value="@string/fallbackType" />
+80-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:76:17-53
+81
+82            <intent-filter>
+82-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:78:13-81:29
+83                <action android:name="android.intent.action.MAIN" />
+83-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:79:17-69
+83-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:79:25-66
+84
+85                <category android:name="android.intent.category.LAUNCHER" />
+85-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:80:17-77
+85-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:80:27-74
+86            </intent-filter>
+87            <intent-filter android:autoVerify="true" >
+87-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:83:13-89:29
+87-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:83:28-53
+88                <action android:name="android.intent.action.VIEW" />
+88-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:84:17-68
+88-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:84:25-66
+89
+90                <category android:name="android.intent.category.DEFAULT" />
+90-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:85:17-76
+90-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:85:27-73
+91                <category android:name="android.intent.category.BROWSABLE" />
+91-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:86:17-77
+91-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:86:27-75
+92
+93                <data
+93-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:87:17-88:54
+94                    android:host="@string/hostName"
+94-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:88:21-52
+95                    android:scheme="https" />
+95-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:87:23-45
+96            </intent-filter>
+97        </activity>
+98        <activity android:name="com.google.androidbrowserhelper.trusted.FocusActivity" />
+98-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:92:9-90
+98-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:92:19-87
+99        <activity
+99-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:94:9-95:62
+100            android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
+100-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:94:19-97
+101            android:configChanges="orientation|screenSize" />
+101-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:95:13-59
+102
+103        <provider
+103-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:97:9-105:20
+104            android:name="androidx.core.content.FileProvider"
+104-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:98:13-62
+105            android:authorities="@string/providerAuthority"
+105-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:99:13-60
+106            android:exported="false"
+106-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:101:13-37
+107            android:grantUriPermissions="true" >
+107-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:100:13-47
+108            <meta-data
+108-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:102:13-104:53
+109                android:name="android.support.FILE_PROVIDER_PATHS"
+109-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:103:17-67
+110                android:resource="@xml/filepaths" />
+110-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:104:17-50
+111        </provider>
+112
+113        <service
+113-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:107:9-116:20
+114            android:name="com.google.androidbrowserhelper.trusted.DelegationService"
+114-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:108:14-86
+115            android:enabled="@bool/enableNotification"
+115-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:109:14-56
+116            android:exported="@bool/enableNotification" >
+116-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:110:14-57
+117            <intent-filter>
+117-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:112:14-115:30
+118                <action android:name="android.support.customtabs.trusted.TRUSTED_WEB_ACTIVITY_SERVICE" />
+118-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:113:18-106
+118-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:113:26-104
+119
+120                <category android:name="android.intent.category.DEFAULT" />
+120-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:85:17-76
+120-->/home/bjmrq/code/BjMrq/Boilerplates/PWA-React--Boilerplate/android/app/src/main/AndroidManifest.xml:85:27-73
+121            </intent-filter>
+122        </service>
+123    </application>
+124
+125</manifest>

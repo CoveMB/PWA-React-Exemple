@@ -55,7 +55,7 @@
   "related_applications": [
     {
       "platform": "play",
-      "id": "app.netlify.pwaboilerplate"
+      "id": "app.netlify.pwa_boilerplate"
     }
   ]
 }
