@@ -26,7 +26,7 @@ const Setting = () => {
         const notificationOptions = {
           body    : 'You can turn them off in your settings',
           badge   : '/images/icons/app-icon-72x72.png',
-          icon    : '/images/icons/app-icon-72x72.png',
+          icon    : '/images/icons/app-icon-120x120.png',
           renotify: true,
           tag     : 'confirm-notification',
           vibrate : [

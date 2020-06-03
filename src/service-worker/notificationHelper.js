@@ -11,6 +11,11 @@ const handleNotification = async (event) => {
     notification.close();
     clients.openWindow('https://www.computerhope.com/issues/ch001918.htm');
 
+  } else if (action === 'back') {
+
+    notification.close();
+    clients.openWindow('https://pwa-boilerplate.netlify.app');
+
   }
 
   return setTimeout(() => {
@@ -19,7 +24,7 @@ const handleNotification = async (event) => {
     const notificationOptions = {
       body    : 'This event happened in the background',
       badge   : '/images/icons/app-icon-72x72.png',
-      icon    : '/images/icons/app-icon-72x72.png',
+      icon    : '/images/icons/app-icon-120x120.png',
       renotify: true,
       tag     : 'confirm-notification',
       vibrate : [
@@ -29,10 +34,10 @@ const handleNotification = async (event) => {
       ],
       actions: [
         {
-          action: 'confirm', title: 'So cool'
+          action: 'back', title: 'So cool'
         },
         {
-          action: 'confused', title: 'Stop now'
+          action: 'confirm', title: 'Stop now'
         }
       ]
     };
