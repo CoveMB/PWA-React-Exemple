@@ -32,18 +32,26 @@ const Chat = () => {
 
   const addMessageSyncDB = async (content, author) => {
 
-    const postData = {
-      id    : new Date().toISOString(),
-      result: {
-        content, author
-      }
-    };
+    try {
 
-    await writeDb('sync-chat', postData);
+      const postData = {
+        id    : new Date().toISOString(),
+        result: {
+          content, author
+        }
+      };
+
+      await writeDb('sync-chat', postData);
+
+    } catch {
+
+      await postNewMessage(newMessage, sender, chatUrl);
+
+    }
 
   };
 
-  const fetchChat = async (url) => {
+  const fetchChat = async (url, content, author) => {
 
     try {
 
@@ -63,7 +71,23 @@ const Chat = () => {
 
           const foundHistoric = historyMessages.find((historic) => historic.id === batch);
 
-          setChat(foundHistoric.result || []);
+          if (content) {
+
+            setChat([
+              ...foundHistoric.result,
+              {
+                id        : 'new',
+                author,
+                content,
+                created_at: new Date()
+              }
+            ]);
+
+          } else {
+
+            setChat(foundHistoric.result || []);
+
+          }
 
         }
 
@@ -100,6 +124,8 @@ const Chat = () => {
 
       if (backgroundSync) {
 
+        console.log('Sync instruction');
+
         // Sync data for new message if any messages where sent offline
         await syncData('sync-new-message');
 
@@ -108,9 +134,9 @@ const Chat = () => {
       // Fetch new messages (the timeout insure that new messages sent through service worker would have reach the server)
       const timer = setTimeout(async () => {
 
-        await fetchChat(chatUrl);
+        await fetchChat(chatUrl, newMessage, sender);
 
-      }, 50);
+      }, 80);
 
       return () => clearTimeout(timer);
 

@@ -48,7 +48,6 @@ const SingleInputForm = ({
         <Label htmlFor={name}>{label}</Label>
         <Div>
           <Input
-            autoFocus
             id={name}
             name={name}
             placeholder={placeholder}

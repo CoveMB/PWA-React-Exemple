@@ -12,10 +12,12 @@ const handleSync = async (event) => {
     const requestUrl = `${baseUrl + batch}/messages`;
     const allData = await readDb('sync-chat');
 
+
     allData.forEach(async (data) => {
 
       try {
 
+        console.log('Fetching', data);
         const responseChat = await fetch(requestUrl, {
           method: 'POST',
           body  : JSON.stringify(data.result)
@@ -29,7 +31,7 @@ const handleSync = async (event) => {
 
       } catch (error) {
 
-        console.log(error);
+        console.log(error.message);
 
       }
 

@@ -64,7 +64,11 @@ registerRoute(
 registerRoute(
   /.*messages.*$/, ({ request }) => {
 
-    fetchAndStoreDb(request, 'messages');
+    if (request.method === 'GET') {
+
+      fetchAndStoreDb(request, 'messages');
+
+    }
 
   }
 );

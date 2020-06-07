@@ -6,7 +6,7 @@ const evaluateBackgroundSync = async () => {
 
     const sw = await navigator.serviceWorker.ready;
 
-    await sw.sync.register('sync-new-message');
+    await sw.sync.register('sync-test');
 
     return true;
 
