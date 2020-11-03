@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import { lightColor } from 'Style/colors';
 import { Animated } from 'react-animated-css';
+import { lightColor } from 'Style/colors';
+import styled from 'styled-components';
 
 const MessageWrapper = styled.div`
   font-style: normal;
@@ -9,7 +9,7 @@ const MessageWrapper = styled.div`
   line-height: 20px;
   margin: 10px 2%;
   width: 92%;
-  border-radius: 4px;
+  border-radius: 5px;
   background: ${lightColor};
   padding: 2%;
   word-wrap: break-word;
