@@ -21,7 +21,7 @@
     "idb": "^5.0.3",
     "imagemin-webp-webpack-plugin": "^3.3.1",
     "lottie-react-web": "^2.1.4",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
